@@ -1,9 +1,9 @@
-
+GCC?=gcc
 .PHONY: all install uninstall
 all:	servod
 
 servod:	servod.c
-	gcc -Wall -g -O2 -o servod servod.c -lm
+	${GCC} -Wall -g -O2 -o servod servod.c -lm
 
 install: servod
 	[ "`id -u`" = "0" ] || { echo "Must be run as root"; exit 1; }
